@@ -376,7 +376,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -392,6 +394,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.download"><code class="docutils literal notranslate"><span class="pre">Model.download()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.load"><code class="docutils literal notranslate"><span class="pre">Model.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.show"><code class="docutils literal notranslate"><span class="pre">Model.show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -403,6 +418,57 @@ document.write(`
                   
   <section id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="astro_tigress.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">astro_tigress.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_master</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/astro_tigress/tigress_read.html#Model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#astro_tigress.Model" title="Permalink to this definition">#</a></dt>
+<dd><p>Class containing the simulation model information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>model_id</strong> (<em>str</em>) – name of the model, e.g. <cite>R8_2pc</cite>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="astro_tigress.Model.download">
+<span class="sig-name descname"><span class="pre">download</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ivtk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MHD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/astro_tigress/tigress_read.html#Model.download"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#astro_tigress.Model.download" title="Permalink to this definition">#</a></dt>
+<dd><p>Download simulation data from a certain data set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ivtk</strong> (<em>int</em>) – vtk output number</p></li>
+<li><p><strong>dataset</strong> (<em>str</em><em>, </em><em>[</em><em>&quot;MHD&quot;</em><em>, </em><em>&quot;chem&quot;</em><em>, </em><em>&quot;CO_lines&quot;</em><em>, </em><em>&quot;history&quot;</em><em>, </em><em>&quot;input&quot;</em><em>, </em><em>&quot;all&quot;</em><em>]</em>) – name of the dataset or download all.</p></li>
+<li><p><strong>Z</strong> (<em>float</em><em>, </em><em>[</em><em>0.5</em><em>, </em><em>1</em><em>, </em><em>2</em><em>]</em>) – metallicity for chemistry post-processing.</p></li>
+<li><p><strong>iline</strong> (<em>int</em><em>, </em><em>[</em><em>1</em><em>, </em><em>2</em><em>]</em>) – uppper level of CO rotational line. 1 for J=1-0, 2 for J=2-1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="astro_tigress.Model.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ivtk</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'MHD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Tdect</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/astro_tigress/tigress_read.html#Model.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#astro_tigress.Model.load" title="Permalink to this definition">#</a></dt>
+<dd><p>Load simulation data from a certain data set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ivtk</strong> (<em>int</em>) – vtk output number</p></li>
+<li><p><strong>dataset</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>[</em><em>&quot;MHD&quot;</em><em>, </em><em>&quot;chem&quot;</em><em>, </em><em>&quot;CO_lines&quot;</em><em>, </em><em>&quot;MHD_PI&quot;</em><em>, </em><em>&quot;all&quot;</em><em>]</em>) – name of the dataset or load all.</p></li>
+<li><p><strong>Z</strong> (<em>float</em><em>, </em><em>[</em><em>0.5</em><em>, </em><em>1</em><em>, </em><em>2</em><em>]</em>) – metallicity for chemistry post-processing.</p></li>
+<li><p><strong>iline</strong> (<em>int</em><em>, </em><em>[</em><em>1</em><em>, </em><em>2</em><em>]</em>) – uppper level of CO rotational line. 1 for J=1-0, 2 for J=2-1</p></li>
+<li><p><strong>Tdect</strong> (<em>float</em>) – detection limit for atenna temperature in K
+for each velocity channel.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="astro_tigress.Model.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/astro_tigress/tigress_read.html#Model.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#astro_tigress.Model.show" title="Permalink to this definition">#</a></dt>
+<dd><p>Print available data list</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,6 +525,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.download"><code class="docutils literal notranslate"><span class="pre">Model.download()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.load"><code class="docutils literal notranslate"><span class="pre">Model.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astro_tigress.Model.show"><code class="docutils literal notranslate"><span class="pre">Model.show()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
